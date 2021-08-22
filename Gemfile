@@ -52,6 +52,18 @@ end
   # 環境変数を使用できる
   gem 'dotenv-rails'
 
+  # socialiizatioinを使用できる
+  gem 'socialization'
+  
+  # ページネーションを実装できる
+  gem 'kaminari'
+
+  # それらしい値を自動生成できる
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+  # ショッピングカートを実装できる
+  gem 'acts_as_shopping_cart'
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
