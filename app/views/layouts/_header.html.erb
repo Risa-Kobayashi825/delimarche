@@ -1,7 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm delimarche-header-container p-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm delimarche-header-container">
   <div class="container-fluid">
-    
-    <a class="navbar-brand navbar-brand-center" href="/"><%= image_tag "/images/logo.jpg", class:"header-logo" %></a>
+    <a class="navbar-brand" href="/" style="margin-left: calc( 50vw - 100px);"><%= image_tag "/images/logo.jpg", class:"header-logo" %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,23 +9,23 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
             <li class="nav-item">
-                <%= link_to "ログアウト", destroy_user_session_path, method: "delete",class: "nav-link" %>
+                 <%= link_to "ログアウト", destroy_user_session_path, method: "delete",class: "nav-link" %>
             </li>     
             <li class="nav-item mr-5">
-         <%= link_to mypage_users_path, class: "nav-link" do %>
-           <i class="fas fa-user mr-1"></i><label>マイページ</label>
-         <% end %>
+                 <%= link_to mypage_users_path, class: "nav-link" do %>
+                   <i class="fas fa-user mr-1"></i><label>マイページ</label>
+                 <% end %>
             </li>
             <li class="nav-item mr-5">
-         <%= link_to mypage_favorite_users_path, class: "nav-link" do %>
-           <i class="far fa-heart"></i>
-         <% end %>
-          </li>
-          <li class="nav-item mr-5">
-         <%= link_to cart_users_path, class: "nav-link" do %>
-           <i class="fas fa-shopping-cart"></i>
-         <% end %>
-          </li>
+                 <%= link_to mypage_favorite_users_path, class: "nav-link" do %>
+                   <i class="far fa-heart"></i>
+                 <% end %>
+           </li>
+           <li class="nav-item mr-5">
+                 <%= link_to cart_users_path, class: "nav-link" do %>
+                   <i class="fas fa-shopping-cart"></i>
+                 <% end %>
+           </li>
         <% else %>
             <li class="nav-item">
                 <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
@@ -35,14 +34,7 @@
                 <%= link_to "ログイン", login_path, class: "nav-link" %>
             </li>
         <% end %>
-        </li>
-        <hr>
-        <li class="nav-item mr-5">
-          <%= link_to login_path, class: "nav-link" do %><i class="far fa-heart"></i><% end %>
-        </li>
-        <li class="nav-item mr-5">
-          <%= link_to login_path, class: "nav-link" do %><i class="fas fa-shopping-cart"></i><% end %>
-        </li>
+
       </ul>
       
     </div>
