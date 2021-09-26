@@ -1,11 +1,19 @@
 <div class="d-flex justify-content-center">
   <div class="row w-75">
-    <div class="col-5 offset-1">
-      <%= image_tag "/images/dummy.png", class: "w-100 img-fuild" %>
+    <div class="col-md-5 col-12 offset-1">
+      <% if @product.image.attached? %>
+        <%= image_tag @product.image, class: "w-100 img-fuild" %>
+      <% else %>
+        <%= image_tag "/images/dummy.png", class: "w-100 img-fuild" %>
+      <% end %>
     </div>
 
     <div class="col">
       <div class="d-flex flex-column">
+        <p class="delimarche-product-shop-name">
+          <%= image_tag "/images/map_icon.png", class:"icon-size" %>
+          <%= @product.shop_name %>
+          </p>
         <h1 class="">
           <%= @product.name %>
         </h1>
@@ -56,8 +64,11 @@
       <div class="row">
        <% @reviews.each do |review| %>
        <div class="offset-md-5 col-md-5">
-         <p class="h3"><%= review.content %></p>
-         <label><%= review.created_at %></label>
+         <h3 class="review-score-color"><%= score_on_star(review.score) %></h3>
+         <p class="h4"><%= review.content %></p>
+          <h7><%= review.user.name %></h7>
+          <h7><%= l review.created_at %></h7>
+          <hr>
        </div>
        <% end %>
      </div>
@@ -66,6 +77,9 @@
        <div class="row">
           <div class="offset-md-5 col-md-5">
            <%= form_with model: @review, url: product_reviews_path(@product) do |f| %>
+              <h5>評価</h5>
+               <%= f.select :score, @star_repeat_select, {}, class: "form-control m-2 review-score-color" %>
+              <h5>レビュー内容</h5>
              <%= f.text_area :content, class: "form-control m-2" %>
              <%= f.submit "レビューを追加" , class:"btn delimarche-submit-button ml-2"%>
            <% end %>

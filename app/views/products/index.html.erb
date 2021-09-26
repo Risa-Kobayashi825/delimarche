@@ -1,9 +1,9 @@
 
 <div class="row">
-  <div class="col-2">
-     <%= render partial: "layouts/sidebar", locals: { categories: @categories, major_category_names: @major_category_names } %>
-  </div>
-  <div class="col-9">
+  <div class="col-2 sidebar-responsive-category">
+      <div class="sidebar-pc"><%= render partial: "layouts/sidebar", locals: { categories: @categories, major_category_names: @major_category_names } %></div>
+    </div>
+  <div class="col-md-9 col-12">
     <div class="container">
      <% if @category.present? %>
        <%= link_to "トップ", "#", category: @major_category_name %> > <%= @category.name %>
@@ -23,9 +23,13 @@
       <div class="row w-100">
 
         <% @products.each do |product|%>
-        <div class="col-3">
+        <div class="col-md-3 col-6">
           <%= link_to product_path(product) do %>
-            <%= image_tag "/images/dummy.png", class: "img-thumbnail"%>
+            <% if product.image.attached? %>
+              <%= image_tag product.image, class: "img-thumbnail" %>
+            <% else %>
+              <%= image_tag "/images/dummy.png", class: "img-thumbnail" %>
+            <% end %>
           <% end %>
           <div class="row">
             <div class="col-12">

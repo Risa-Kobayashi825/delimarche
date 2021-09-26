@@ -1,12 +1,16 @@
 <div class="container">
-  <% major_category_names.each do |major_category_name| %>
-    <h2><%= major_category_name %></h2>
+    <h4 class="sidebar-category-title">カテゴリーから探す</h4>
     <% categories.each do |category| %>
-      <% if category.major_category_name == major_category_name %>
         <label class="delimarche-sidebar-category-label">
-         <%= link_to category.name, products_path(category: category.id) %>
+          <% if category.image_name.present? %>
+            <%= image_tag "/images/categories/#{category.image_name}", class: "sidebar-category-image" %>
+          <% else %>
+            <%= image_tag "/images/categories/dummy.png", class: "sidebar-category-image" %>
+          <% end %>
+         <%= link_to category.name, products_path(category: category.id), class: "sidebar-link"%>
         </label>
-      <% end %>
     <% end %>
-  <% end %>
+
 </div>
+
+<!--major-categoruの条件分岐削除-->

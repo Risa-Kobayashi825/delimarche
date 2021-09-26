@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: Nunito, sans-serif;
+  font-family:"Times New Roman", "游明朝", "游明朝体", "YuMincho", "Yu Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN W3", HiraMinProN-W3, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "HGS明朝E";
   font-size: .9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -40,4 +40,97 @@ h3, .h3 {
   border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+// sidebar css
+
+.sidebar-category-image {
+  width: 50px;
+  height: 50px;
+  // border-radius: 50%;
+  object-fit: cover;
+}
+.sidebar-category-title{
+ font-size:17px;
+ font-family:"Times New Roman", "游明朝", "游明朝体", "YuMincho", "Yu Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN W3", HiraMinProN-W3, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "HGS明朝E";
+ margin-top:23px;
+ border-bottom: 1px solid #B1AEAE;
+}
+
+.header{
+  height:60px;
+}
+
+
+// .sidebar-sp{
+//   width:90%;
+//   margin:auto;
+//   height:250px;
+// }
+
+.sidebar-responsive{
+  width:90%;
+  margin:auto;
+  height:250px;
+}
+
+.nav-link{
+  background-color:white;
+}
+
+@media (min-width: 768px) {
+ .sidebar-category-image {
+  width: 30px;
+  height: 30px;
+  // border-radius: 50%;
+  object-fit: cover;
+}
+.sidebar-category-title{
+ font-size:17px;
+ font-family:"Times New Roman", "游明朝", "游明朝体", "YuMincho", "Yu Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN W3", HiraMinProN-W3, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "HGS明朝E";
+ margin-top:23px;
+ border-bottom: 1px solid #B1AEAE;
+}
+.sidebar-pc{
+}
+.sidebar-responsive{
+    flex: 0 0 auto;
+    width: 16.66666667%;
+    margin: 0px;
+    height: 1000px;
+}
+
+.sidebar-responsive{
+    flex: 0 0 auto;
+    width: 16.66666667%;
+    margin: 0px;
+    height: 1000px;
+}
+.header{
+  height:70px;
+}
+}
+
+// footer
+
+footer{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: #666666;
+  font-size: 0.5rem;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+footer{
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+  text-align: center;
+  background-color: #666666;
+  font-size: 1rem;
+  color: #fff;
+}
 }

@@ -2,10 +2,9 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :reviews
   acts_as_likeable
-  
-  PER = 15
+  has_one_attached :image
 
- scope :display_list, -> (page) { page(page).per(PER) }
+ extend DisplayList
  scope :on_category, -> (category) { where(category_id: category) }
  scope :sort_order, -> (order) { order(order) }
 
@@ -28,10 +27,16 @@ class Product < ApplicationRecord
     }
   }
   
-  scope :in_cart_product_names, -> (cart_item_ids) { where(id: cart_item_ids).pluck(:name) }
+  scope :in_cart_product_names, -> (cart_item_ids) { where(id: cart_item_ids).pluck(:name).reverse }
+  scope :recently_products, -> (number) { order(created_at: "desc").take(number) }
+  scope :recommend_products, -> (number) { where(recommended_flag: true).take(number) }
+  scope :check_products_carriage_list, -> (product_ids) { where(id: product_ids).pluck(:carriage_flag)}
+
   
   def reviews_new
     reviews.new
   end
-  
+  def reviews_with_id
+    reviews.reviews_with_id
+  end
 end

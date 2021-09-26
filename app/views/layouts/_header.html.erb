@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm delimarche-header-container">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/" style="margin-left: calc( 50vw - 100px);"><%= image_tag "/images/logo.jpg", class:"header-logo" %></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm delimarche-header-container fixed-top">
+  <div class="container-fluid header">
+    <a class="navbar-brand" href="/"><%= image_tag "/images/logo.jpg", class:"header-logo" %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,29 +9,36 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
             <li class="nav-item">
-                 <%= link_to "ログアウト", destroy_user_session_path, method: "delete",class: "nav-link" %>
+                 <%= link_to destroy_user_session_path, method: "delete",class: "nav-link" do %>
+                 <%= image_tag "/images/logout_icon.png", class:"icon-size" %><label>ログアウト</label>
+                 <% end %>
             </li>     
             <li class="nav-item mr-5">
                  <%= link_to mypage_users_path, class: "nav-link" do %>
-                   <i class="fas fa-user mr-1"></i><label>マイページ</label>
+                   <%= image_tag "/images/mypage_icon.png", class:"icon-size" %><label>マイページ</label>
                  <% end %>
             </li>
             <li class="nav-item mr-5">
                  <%= link_to mypage_favorite_users_path, class: "nav-link" do %>
-                   <i class="far fa-heart"></i>
+                   <%= image_tag "/images/favorite_icon.png", class:"icon-size" %>
                  <% end %>
            </li>
            <li class="nav-item mr-5">
                  <%= link_to cart_users_path, class: "nav-link" do %>
-                   <i class="fas fa-shopping-cart"></i>
+                   <!--<i class="fas fa-shopping-cart"></i>-->
+                   <%= image_tag "/images/shoppingcart_icon.png", class:"icon-size" %>
                  <% end %>
            </li>
         <% else %>
             <li class="nav-item">
-                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+                <%= link_to new_user_registration_path, class: "nav-link" do%>
+                <%= image_tag "/images/mypage_icon.png", class:"icon-size" %><label>新規登録</label>
+                <% end %>
             </li>
             <li class="nav-item">
-                <%= link_to "ログイン", login_path, class: "nav-link" %>
+                <%= link_to login_path, class: "nav-link" do%>
+                <%= image_tag "/images/login_icon.png", class:"icon-size" %><label>ログイン</label>
+                <% end %>
             </li>
         <% end %>
 
@@ -40,26 +47,3 @@
     </div>
   </div>
 </nav>
-
-
-<style>
-/*    .navbar-toggle {*/
-/*    z-index: 2;*/
-/*}*/
-
-.navbar-brand-center {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    text-align:center;
-    margin: auto;
-}
-
-@media (min-width: 768px) {
-    .navbar-brand-center {
-        margin-left: 0 !important;
-    }
-}
-</style>
-

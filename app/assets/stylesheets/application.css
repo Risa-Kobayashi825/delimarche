@@ -13,7 +13,79 @@
  *= require_tree .
  *= require_self
  */
+ 
+body > main {
+    margin-top: 86px;
+    min-height: calc( 100vh - 186px);
+}
+
+nav.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
 .header-logo{
-    width: 200px;
-    padding: 20px 20px;
+    width: 150px;
+    margin-left:10px;
+    /*margin-left: calc( 45vw - 60px);*/
+    /*padding: 10px 10px 10px 10px;*/
+}
+
+.icon-size{
+    width: 20px;
+    margin:0px 5px;
+    /*padding: 10px 10px 10px 10px;*/
+}
+.navbar-brand-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align:center;
+    margin: auto;
+}
+
+/* slider */
+
+.slider-area img {
+    height: 23vh;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand-center {
+        margin-left: 0 !important;
+    }
+    
+    .header-logo{
+    width: 230px;
+    margin-left: calc( 45vw - 60px);
+    /*padding: 10px 10px 10px 10px;*/
+}
+
+    .slider-area img {
+    height: 60vh;
+    object-fit: cover;
+}
+}
+
+
+.footer{
+  background-color: #3A414A;
+}
+.h5{
+  font-size:10px;
+}
+.main-title{
+ font-size:25px;
+ font-family:"Times New Roman", "游明朝", "游明朝体", "YuMincho", "Yu Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN W3", HiraMinProN-W3, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "HGS明朝E";
+ margin-top:15px;
+ border-bottom: 1px solid #B1AEAE;
+}
+
+/*user_mypage*/
+.user-mypage-title{
+    padding-left:40px;
 }

@@ -4,9 +4,15 @@ class ShoppingCartsController < ApplicationController
   
   def index
     @user_cart_items = ShoppingCartItem.user_cart_items(@user_cart)
+    @user_cart_items.each do |user_cart_item| 
+         # logger.debug("====================== user_cart_item = #{Product.find(user_cart_item.item_id).name}")
+    end
     @user_cart_items_count = ShoppingCartItem.user_cart_items(@user_cart).count
+    # logger.debug("====================== user_cart_items_count = #{@user_cart_items_count}")
     @user_cart_item_ids = ShoppingCartItem.user_cart_item_ids(@user_cart)
     @product_names = Product.in_cart_product_names(@user_cart_item_ids)
+    # logger.debug("====================== user_cart_items = #{@product_names}")
+    @user_cart.shipping_cost_check(current_user)
     @total = @user_cart.total
   end
   
@@ -17,7 +23,7 @@ class ShoppingCartsController < ApplicationController
   def create
    @product = Product.find(product_params[:product_id])
    @user_cart.add(@product, product_params[:price].to_i, product_params[:quantity].to_i)
-   redirect_to product_url(@product)
+   redirect_to cart_users_path
   end
   
   def update
@@ -26,6 +32,14 @@ class ShoppingCartsController < ApplicationController
   def destroy
    @user_cart.buy_flag = true
    @user_cart.save
+   
+   Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+   Payjp::Charge.create( 
+                          :customer => current_user.token,
+                          :amount => @user_cart.total.to_i,
+                          :currency => 'jpy'
+                        )
+   
    redirect_to cart_users_url
   end
   

@@ -18,4 +18,16 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+
+
+$(window).resize(function(){
+    //windowの幅をxに代入
+    var x = $(window).width();
+    //windowの分岐幅をyに代入
+    var y = 748;
+    if (x <= y) {
+        $('#sidebar-responsive').addClass('col-2-1');
+    }else{
+        $('#sidebar-responsive').removeClass('col-2-1');
+    }
+});

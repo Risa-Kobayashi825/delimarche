@@ -9,7 +9,11 @@
       <div class="col-md-8 mt-2">
         <div class="d-inline-flex">
           <%= link_to product_path(favorite), class: "w-25" do %>
-            <%= image_tag "/images/dummy.png", class: "img-fuild w-100" %>
+                  <% if favorite.image.attached? %>
+                    <%= image_tag favorite.image, class: "w-100 img-fuild" %>
+                  <% else %>
+                    <%= image_tag "/images/dummy.png", class: "w-100 img-fuild" %>
+                  <% end %>
           <% end %>
           <div class="container mt-3">
             <h5 class="w-100 delimarche-favorite-item-text"><%= favorite.name %></h5>
@@ -22,9 +26,28 @@
           削除
         <% end %>
       </div>
-      <div class="col-md-2 d-flex align-items-center justify-content-end">
-        <button type="submit" class="btn delimarche-favorite-add-cart text-white w-100">カートに入れる</button>
-      </div>
+      <%= form_with url: cart_create_users_path, local: true do |f| %>
+         <%= f.hidden_field :product_id, value: favorite.id %>
+          <%= f.hidden_field :name, value: favorite.name %>
+          <%= f.hidden_field :price, value: favorite.price %>
+          <div class="form-group row">
+            <%= f.label "数量", class: "col-sm-2 col-form-label" %>
+            <div class="col-sm-10">
+              <%= f.number_field :quantity, min:1, value:1, class: "form-control w-25"%>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <%= f.submit "カートに追加", class: "btn delimarche-submit-button w-100" do %>
+                <i class="fas fa-shopping-cart"></i>
+              <% end %>
+            </div>
+          </div>
+        <!--< end %>-->
+      <% end %>
+      <!--<div class="col-md-2 d-flex align-items-center justify-content-end">-->
+        <!--<button type="submit" class="btn delimarche-favorite-add-cart text-white w-100">カートに入れる</button>-->
+      <!--</div>-->
       <% end %>
     </div>
 

@@ -1,0 +1,18 @@
+<div class="container-sp">
+  <h4 class="sidebar-category-title ">カテゴリーから探す</h4>
+  <!--<div class="d-flex flex-wrap">-->
+    <div class="d-flex flex-row flex-wrap"><% categories.each do |category| %>
+        <label class="delimarche-sidebar-category-label flex-column">
+          <% if category.image_name.present? %>
+            <%= image_tag "/images/categories/#{category.image_name}", class: "sidebar-category-image" %>
+          <% else %>
+            <%= image_tag "/images/categories/dummy.png", class: "sidebar-category-image" %>
+          <% end %>
+         <div><%= link_to category.name, products_path(category: category.id), class: "sidebar-link"%></div>
+        </label>
+    <% end %>
+    </div>
+  <!--</div>-->
+</div>
+
+<!--major-categoruの条件分岐削除-->
