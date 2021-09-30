@@ -43,7 +43,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
  gem 'devise'
 
  # bootstrapを使用できる
- gem 'bootstrap'
+# gem 'bootstrap'
  gem 'jquery-rails'
 
 group :development, :test do

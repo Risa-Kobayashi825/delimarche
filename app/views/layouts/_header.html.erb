@@ -10,7 +10,7 @@
         <% if user_signed_in? %>
             <li class="nav-item">
                  <%= link_to destroy_user_session_path, method: "delete",class: "nav-link" do %>
-                 <%= image_tag "/images/logout_icon.png", class:"icon-size" %><label>ログアウト</label>
+                  <%= image_tag "/images/logout_icon.png", class:"icon-size" %><label>ログアウト</label>
                  <% end %>
             </li>     
             <li class="nav-item mr-5">
@@ -32,7 +32,7 @@
         <% else %>
             <li class="nav-item">
                 <%= link_to new_user_registration_path, class: "nav-link" do%>
-                <%= image_tag "/images/mypage_icon.png", class:"icon-size" %><label>新規登録</label>
+                  <%= image_tag "/images/mypage_icon.png", class:"icon-size" %><label>新規登録</label>
                 <% end %>
             </li>
             <li class="nav-item">

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 45cb8e87fc199cd72e4122d8ae75a1808b7b3ba3
+  revision: 09f5c3bf3f47a4bf83806a24f010c876f3c50ca7
   branch: master
   specs:
     faker (2.19.0)
@@ -58,16 +58,10 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (10.3.3.0)
-      execjs (~> 2)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
-    bootstrap (5.1.0)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.9.3, < 3)
-      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.35.3)
@@ -148,25 +142,24 @@ GEM
     mime-types-data (3.2021.0901)
     mini_mime (1.1.1)
     minitest (5.14.4)
-    monetize (1.9.4)
+    monetize (1.11.0)
       money (~> 6.12)
-    money (6.13.8)
+    money (6.16.0)
       i18n (>= 0.6.4, <= 2)
-    money-rails (1.14.0)
+    money-rails (1.15.0)
       activesupport (>= 3.0)
-      monetize (~> 1.9.0)
-      money (~> 6.13.2)
+      monetize (~> 1.9)
+      money (~> 6.13)
       railties (>= 3.0)
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-linux)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     payjp (0.0.7)
       rest-client (~> 2.0)
     pg (1.2.3)
-    popper_js (2.9.3)
     public_suffix (4.0.6)
     puma (3.12.6)
     racc (1.5.2)
@@ -223,14 +216,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -280,7 +265,6 @@ PLATFORMS
 DEPENDENCIES
   acts_as_shopping_cart
   bootsnap (>= 1.1.0)
-  bootstrap
   byebug
   capybara (>= 2.15)
   chromedriver-helper
