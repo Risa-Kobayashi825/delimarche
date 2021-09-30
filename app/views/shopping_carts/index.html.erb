@@ -55,18 +55,41 @@
     </div>
      <%= form_with url: cart_users_path , method: :delete, class: "d-flex justify-content-end mt-3" do |f| %>
       <%= link_to "買い物を続ける", products_path, class: "btn delimarche-favorite-button border-dark text-dark mr-3" %>
-      <div class="btn delimarche-submit-button" data-toggle="modal" data-target="#buy-confirm-modal">購入を確定する</div>
-      <div class="modal fade" id="buy-confirm-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <!--<div class="btn delimarche-submit-button" data-toggle="modal" data-target="#buy-confirm-modal">購入を確定する</div>-->
+      <button type="button" class="btn delimarche-submit-button" data-bs-toggle="modal" data-bs-target="#buy-confirm-modal">
+        購入を確定する
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">購入を確定しますか？</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!--<div class="modal fade" id="buy-confirm-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
+      <div class="modal fade" id="buy-confirm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="staticBackdropLabel">購入を確定しますか？</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+              <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>-->
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="閉じる">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn delimarche-favorite-button border-dark text-dark" data-dismiss="modal">閉じる</button>
+              <!--<button type="button" class="btn delimarche-favorite-button border-dark text-dark" data-dismiss="modal">閉じる</button>-->
+              <button type="button" class="btn delimarche-favorite-button border-dark text-dark" data-bs-dismiss="modal">閉じる</button>
               <button type="submit" class="btn delimarche-submit-button">購入</button>
             </div>
           </div>
