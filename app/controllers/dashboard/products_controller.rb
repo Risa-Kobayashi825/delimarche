@@ -39,7 +39,7 @@ class Dashboard::ProductsController < ApplicationController
   end
 
   def edit
-    @categories = Category.al
+    @categories = Category.all
   end
 
   def update
