@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center">
   <div class="row w-75">
-    <div class="col-md-5 col-12 offset-1">
+    <div class="col-md-5 col-12">
       <% if @product.image.attached? %>
         <%= image_tag @product.image, class: "w-100 img-fuild" %>
       <% else %>
@@ -39,12 +39,12 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-7">
+            <div class="col-md-7 col-6">
               <%= f.submit "カートに追加", class: "btn delimarche-submit-button w-100" do %>
                 <i class="fas fa-shopping-cart"></i>
               <% end %>
             </div>
-            <div class="col-5">
+            <div class="col-md-5 col-5">
                  <%= link_to favorite_product_path, class: "btn delimarche-favorite-button text-favorite w-100" do %>
                 <i class="fa fa-heart"></i><%= current_user.likes?(@product) ? "お気に入り解除" : "お気に入り" %>
               <% end %>

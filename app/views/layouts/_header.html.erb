@@ -9,34 +9,34 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
             <li class="nav-item">
-                 <%= link_to destroy_user_session_path, method: "delete",class: "nav-link" do %>
+                 <%= link_to destroy_user_session_path, method: "delete", data: {"turbolinks" => false}, class: "nav-link" do %>
                   <%= image_tag "/images/logout_icon.png", class:"icon-size" %><label>ログアウト</label>
                  <% end %>
             </li>     
             <li class="nav-item mr-5">
-                 <%= link_to mypage_users_path, class: "nav-link" do %>
+                 <%= link_to mypage_users_path, data: {"turbolinks" => false}, class: "nav-link" do %>
                    <%= image_tag "/images/mypage_icon.png", class:"icon-size" %><label>マイページ</label>
                  <% end %>
             </li>
             <li class="nav-item mr-5">
-                 <%= link_to mypage_favorite_users_path, class: "nav-link" do %>
+                 <%= link_to mypage_favorite_users_path, data: {"turbolinks" => false}, class: "nav-link" do %>
                    <%= image_tag "/images/favorite_icon.png", class:"icon-size" %>
                  <% end %>
            </li>
            <li class="nav-item mr-5">
-                 <%= link_to cart_users_path, class: "nav-link" do %>
+                 <%= link_to cart_users_path, data: {"turbolinks" => false}, class: "nav-link" do %>
                    <!--<i class="fas fa-shopping-cart"></i>-->
                    <%= image_tag "/images/shoppingcart_icon.png", class:"icon-size" %>
                  <% end %>
            </li>
         <% else %>
             <li class="nav-item">
-                <%= link_to new_user_registration_path, class: "nav-link" do%>
+                <%= link_to new_user_registration_path, data: {"turbolinks" => false}, class: "nav-link" do%>
                   <%= image_tag "/images/mypage_icon.png", class:"icon-size" %><label>新規登録</label>
                 <% end %>
             </li>
             <li class="nav-item">
-                <%= link_to login_path, class: "nav-link" do%>
+                <%= link_to login_path, data: {"turbolinks" => false}, class: "nav-link" do%>
                 <%= image_tag "/images/login_icon.png", class:"icon-size" %><label>ログイン</label>
                 <% end %>
             </li>

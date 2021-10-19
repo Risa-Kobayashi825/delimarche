@@ -20,7 +20,7 @@
             <tr>
               <td><%= billing[0] %></td>
               <td><%= billing[1][:updated_at] %></td>
-              <td><%= billing[1][:price_total] %></td>
+              <td>¥<%= billing[1][:price_total] %></td>
               <td>
                 <%= link_to "#{ billing[0] }", mypage_cart_history_users_path(billing[0]) %>
               </td>
