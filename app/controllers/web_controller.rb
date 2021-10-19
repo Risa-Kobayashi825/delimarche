@@ -4,6 +4,7 @@ class WebController < ApplicationController
  RECOMMEND_PRODUCTS_PER_PAGE = 3
  
   def index
+   logger.debug("================= web index")
    if sort_params.present?
      @category = Category.request_category(sort_params[:sort_category])
      @products = Product.sort_products(sort_params, params[:page])
