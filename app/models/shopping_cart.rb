@@ -110,6 +110,8 @@ FREE_SHIPPING=0
     bought_cart_items = ShoppingCartItem.user_cart_items(self.id)
     product_contents_list = Product.where(id: bought_cart_items.ids)
 
+    
+    
     hash = Hash.new { |h,k| h[k] = {} }
     bought_cart_items.each do |bought_cart_item|
       hash[bought_cart_item.id][:image] = product_contents_list[bought_cart_item.id].nil? ? product_contents_list.first.image : product_contents_list[bought_cart_item.id][:image]

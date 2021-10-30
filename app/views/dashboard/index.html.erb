@@ -25,7 +25,7 @@
         <tbody>
         <% @billings.each do |billing| %>
           <tr>
-            <td><%= billing[1][:billing_date] %></td>
+            <td><%= billing[0] %></td>
             <td><%= billing[1][:price_daily] %></td>
             <td><%= billing[1][:quantity_daily] %></td>
             <td><%= billing[1][:price_average_daily].floor(1)  %></td>

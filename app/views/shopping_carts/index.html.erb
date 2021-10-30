@@ -2,7 +2,7 @@
   <div class="w-75">
     <h1>ショッピングカート</h1>
 
-    <div class="offset-8 col-4">
+    <div class="offset-8 col-4 shoppingcart-title">
       <div class="row">
         <div class="col-6">
           <h2>数量</h2>
@@ -25,27 +25,26 @@
                 <%= image_tag "/images/dummy.png", class: "w-100 img-fuild" %>
           <% end %>
       </div>
-      <div class="col-md-6 mt-4">
-        <!--<h3 class="mt-4"><= Product.find_by(id: @user_cart_items[list_number].item_id).name %></h3>-->
-        <h3 class="mt-4"><%= @product_names[list_number] %></h3>
+      <div class="col-md-6">
+        <h3 class="mt-1 mt-md-4"><%= @product_names[list_number] %></h3>
       </div>
       <div class="col-md-2">
-        <h3 class="w-100 mt-4"><%= @user_cart_items[list_number].quantity %></h3>
+        <h3 class="w-100 mt-1 mt-md-4"><%= @user_cart_items[list_number].quantity %>点</h3>
       </div>
       <div class="col-md-2">
-        <h3 class="w-100 mt-4">￥<%= @user_cart_items[list_number].price_cents * @user_cart_items[list_number].quantity %></h3>
+        <h3 class="w-100 mt-1 mt-md-4">￥<%= @user_cart_items[list_number].price_cents * @user_cart_items[list_number].quantity %></h3>
       </div>
       <% end %>
     </div>
 
     <hr>
 
-    <div class="offset-8 col-4">
+    <div class="col-12">
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 d-flex justify-content-end">
           <h2>合計</h2>
         </div>
-        <div class="col-6">
+        <div class="col-6 d-flex justify-content-end">
           <h2>￥<%= @total %></h2>
         </div>
         <div class="col-12 d-flex justify-content-end">
@@ -55,7 +54,6 @@
     </div>
      <%= form_with url: cart_users_path , method: :delete, class: "d-flex justify-content-end mt-3" do |f| %>
       <%= link_to "買い物を続ける", products_path, class: "btn delimarche-favorite-button border-dark text-dark mr-3" %>
-      <!--<div class="btn delimarche-submit-button" data-toggle="modal" data-target="#buy-confirm-modal">購入を確定する</div>-->
       <button type="button" class="btn delimarche-submit-button" data-bs-toggle="modal" data-bs-target="#buy-confirm-modal">
         購入を確定する
       </button>
@@ -76,19 +74,16 @@
         </div>
       </div>
       </div>
-      <!--<div class="modal fade" id="buy-confirm-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
       <div class="modal fade" id="buy-confirm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="staticBackdropLabel">購入を確定しますか？</h5>
-              <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>-->
               <button type="button" class="close" data-bs-dismiss="modal" aria-label="閉じる">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-footer">
-              <!--<button type="button" class="btn delimarche-favorite-button border-dark text-dark" data-dismiss="modal">閉じる</button>-->
               <button type="button" class="btn delimarche-favorite-button border-dark text-dark" data-bs-dismiss="modal">閉じる</button>
               <button type="submit" class="btn delimarche-submit-button">購入</button>
             </div>

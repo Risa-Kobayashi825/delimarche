@@ -29,15 +29,13 @@ nav.fixed-top {
 .header-logo{
     width: 150px;
     margin-left:10px;
-    /*margin-left: calc( 45vw - 60px);*/
-    /*padding: 10px 10px 10px 10px;*/
 }
 
 .icon-size{
     width: 20px;
     margin:0px 5px;
-    /*padding: 10px 10px 10px 10px;*/
 }
+
 .navbar-brand-center {
     position: absolute;
     width: 100%;
@@ -47,7 +45,7 @@ nav.fixed-top {
     margin: auto;
 }
 
-/* slider */
+/*slider*/
 
 .slider-area img {
     height: 23vh;
@@ -71,13 +69,10 @@ nav.fixed-top {
 }
 }
 
-
-.footer{
-  background-color: #3A414A;
-}
 .h5{
   font-size:10px;
 }
+
 .main-title{
  font-size:25px;
  font-family:"Times New Roman", "游明朝", "游明朝体", "YuMincho", "Yu Mincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN W3", HiraMinProN-W3, "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "HGS明朝E";
@@ -86,6 +81,7 @@ nav.fixed-top {
 }
 
 /*user_mypage*/
+
 .user-mypage-title{
     padding-left:40px;
 }
